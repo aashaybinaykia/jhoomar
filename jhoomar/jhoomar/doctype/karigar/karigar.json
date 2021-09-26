@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "autoname": "field:karigar_name",
+ "creation": "2021-03-05 17:44:08.556961",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "karigar_name",
+  "karigar_work_name",
+  "hourly_rate",
+  "total_payables",
+  "accounted_payables",
+  "unaccounted_payables",
+  "needs_refresh"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "karigar_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Karigar Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "karigar_work_name",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Karigar Work Name",
+   "options": "Karigar Work Names",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "hourly_rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Hourly Rate",
+   "precision": "2",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "total_payables",
+   "fieldtype": "Float",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Total Payables",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "accounted_payables",
+   "fieldtype": "Float",
+   "in_global_search": 1,
+   "label": "Accounted Payables",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "bold": 1,
+   "default": "0.00",
+   "fieldname": "unaccounted_payables",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Unaccounted Payables ",
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "default": "yes",
+   "fieldname": "needs_refresh",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Needs Refresh",
+   "options": "yes\nno",
+   "read_only": 1,
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-09-26 13:02:24.197339",
+ "modified_by": "Administrator",
+ "module": "Jhoomar",
+ "name": "Karigar",
+ "name_case": "Title Case",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sampling Manager",
+   "share": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

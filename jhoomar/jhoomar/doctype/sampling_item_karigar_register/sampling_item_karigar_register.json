@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "creation": "2021-05-11 12:04:00.066298",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "karigar_work",
+  "karigar_name",
+  "date",
+  "total_hours",
+  "total_rate",
+  "remarks",
+  "entry_link"
+ ],
+ "fields": [
+  {
+   "fieldname": "karigar_work",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Karigar Work",
+   "options": "Item"
+  },
+  {
+   "fieldname": "karigar_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Karigar Name",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "total_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Total Hours",
+   "precision": "1"
+  },
+  {
+   "fieldname": "total_rate",
+   "fieldtype": "Float",
+   "label": "Total Rate",
+   "precision": "2"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "entry_link",
+   "fieldtype": "Link",
+   "label": "Entry Link",
+   "options": "Karigar Work Entry"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-09-26 13:07:31.788222",
+ "modified_by": "Administrator",
+ "module": "Jhoomar",
+ "name": "Sampling Item Karigar Register",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

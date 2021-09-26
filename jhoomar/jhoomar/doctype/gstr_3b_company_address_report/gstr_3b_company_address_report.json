@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "autoname": "format:GSTR3B-{month}-{year}-{company_address}",
+ "creation": "2021-09-12 22:58:54.539442",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company_address",
+  "year",
+  "month",
+  "json_output",
+  "missing_field_invoices"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Link",
+   "label": "Company Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Select",
+   "label": "Year"
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "options": "January\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+  },
+  {
+   "fieldname": "json_output",
+   "fieldtype": "Code",
+   "label": "JSON Output"
+  },
+  {
+   "fieldname": "missing_field_invoices",
+   "fieldtype": "Small Text",
+   "label": "Invoices with no Place Of Supply",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2021-09-26 13:09:03.663342",
+ "modified_by": "Administrator",
+ "module": "Jhoomar",
+ "name": "GSTR 3B Company Address Report",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

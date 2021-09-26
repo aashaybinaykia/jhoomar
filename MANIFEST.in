@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include jhoomar *.css
+recursive-include jhoomar *.csv
+recursive-include jhoomar *.html
+recursive-include jhoomar *.ico
+recursive-include jhoomar *.js
+recursive-include jhoomar *.json
+recursive-include jhoomar *.md
+recursive-include jhoomar *.png
+recursive-include jhoomar *.py
+recursive-include jhoomar *.svg
+recursive-include jhoomar *.txt
+recursive-exclude jhoomar *.pyc

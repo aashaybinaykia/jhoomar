@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "autoname": "field:sampling_item_code",
+ "creation": "2021-02-07 18:41:19.291849",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sampling_item_code",
+  "items_consumed",
+  "karigar_works",
+  "other_charges",
+  "valuation",
+  "karigar_work_register",
+  "needs_refresh",
+  "state",
+  "amended_from",
+  "stock_entry_name",
+  "item_code"
+ ],
+ "fields": [
+  {
+   "fieldname": "sampling_item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sampling Item Code",
+   "options": "Sampling Item",
+   "read_only": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "Sampling Item Cost Item Consumption",
+   "fieldname": "items_consumed",
+   "fieldtype": "Table",
+   "label": "Items Consumed",
+   "options": "Sampling Item Cost Item Consumption",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "Sampling Item Cost Karigar Work Entry",
+   "fieldname": "karigar_works",
+   "fieldtype": "Table",
+   "label": "Karigar Works",
+   "options": "Sampling Item Cost Karigar Work Entry",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "other_charges",
+   "fieldtype": "Float",
+   "label": "Other Charges",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "valuation",
+   "fieldtype": "Float",
+   "label": "Valuation",
+   "precision": "0",
+   "reqd": 1
+  },
+  {
+   "fieldname": "karigar_work_register",
+   "fieldtype": "Table",
+   "label": "Karigar Work Register",
+   "options": "Sampling Item Karigar Register",
+   "read_only": 1
+  },
+  {
+   "default": "yes",
+   "fieldname": "needs_refresh",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Needs Refresh",
+   "reqd": 1
+  },
+  {
+   "default": "SE Not Created",
+   "fieldname": "state",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "State",
+   "options": "SE submitted\nSE created\nSE Not Created\nSE cancelled",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sampling Item Cost",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "stock_entry_name",
+   "fieldtype": "Link",
+   "label": "Stock Entry Name",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-09-26 13:05:06.193575",
+ "modified_by": "Administrator",
+ "module": "Jhoomar",
+ "name": "Sampling Item Cost",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
