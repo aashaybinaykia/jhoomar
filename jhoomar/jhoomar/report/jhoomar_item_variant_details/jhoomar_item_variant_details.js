@@ -16,6 +16,12 @@ frappe.query_reports["Jhoomar Item Variant Details"] = {
 					filters: { "has_variants": 1 }
 				}
 			}
-		}
+		},
+		{
+			fieldname:"warehouse",
+			label: __("Warehouse"),
+			fieldtype: "Link",
+			options: "Warehouse"
+		},
 	]
 };

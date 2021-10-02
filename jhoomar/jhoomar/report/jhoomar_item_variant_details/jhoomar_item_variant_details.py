@@ -8,11 +8,12 @@ from frappe import _
 
 
 def execute(filters=None):
-	columns = get_columns(filters.item)
-	data = get_data(filters.item)
+	columns = get_columns(filters)
+	data = get_data(filters)
 	return columns, data
 
-def get_data(item):
+def get_data(filters):
+	item = filters.item
 	if not item:
 		return []
 	item_dicts = []
@@ -33,7 +34,7 @@ def get_data(item):
 		variant_list = [variant['name'] for variant in variant_results]
 
 	order_count_map = get_open_sales_orders_count(variant_list)
-	stock_details_map = get_stock_details_map(variant_list)
+	stock_details_map = get_stock_details_map(variant_list, filters)
 	buying_price_map = get_buying_price_map(variant_list)
 	selling_price_map = get_selling_price_map(variant_list)
 	attr_val_map = get_attribute_values_map(variant_list)
@@ -65,14 +66,15 @@ def get_data(item):
 			item_dict["in_production"] = stock_details_map.get(name)["In Production"] or 0
 			item_dict["valuation_rate"] = stock_details_map.get(name)["Valuation Rate"] or 0
 		else:
-			item_dict["current_stock"] = item_dict["in_production"] = 0
+			item_dict["current_stock"] = item_dict["in_production"] = item_dict["valuation_rate"] = 0
 
 		item_dict["avg_buying_price_list_rate"] = buying_price_map.get(name) or 0
 		item_dict["avg_selling_price_list_rate"] = selling_price_map.get(name) or 0
 
 		item_dicts.append(item_dict)
 
-	get_additional_rows(item_dicts)
+	if len(item_dicts):
+		get_additional_rows(item_dicts)
 
 	return item_dicts
 
@@ -104,7 +106,8 @@ def get_total_row(item_dicts, cols):
 		row[col] = sum(list(map(lambda d: d[col], item_dicts)))
 	return row
 
-def get_columns(item):
+def get_columns(filters):
+	item = filters.item
 	columns = [
 		{
 			"fieldname": "label",
@@ -197,7 +200,14 @@ def get_open_sales_orders_count(variants_list):
 
 	return order_count_map
 
-def get_stock_details_map(variant_list):
+def get_stock_details_map(variant_list, filters):
+	stock_detail_filters = {
+		"item_code": ["in", variant_list]
+	}
+
+	if filters.get('warehouse'):
+		stock_detail_filters['warehouse'] = filters.get('warehouse')
+
 	stock_details = frappe.db.get_all(
 		"Bin",
 		fields=[
@@ -207,9 +217,7 @@ def get_stock_details_map(variant_list):
 			"sum(actual_qty*valuation_rate)/sum(actual_qty) as valuation_rate",
 			"item_code",
 		],
-		filters={
-			"item_code": ["in", variant_list]
-		},
+		filters=stock_detail_filters,
 		group_by="item_code"
 	)
 
