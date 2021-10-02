@@ -1,0 +1,47 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2021-10-02 15:11:24.012155",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2021-10-02 16:00:58.678713",
+ "modified_by": "Administrator",
+ "module": "Jhoomar",
+ "name": "Jhoomar Item Variant Details",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Item",
+ "report_name": "Jhoomar Item Variant Details",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Maintenance User"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Stock User"
+  },
+  {
+   "role": "Stock Manager"
+  },
+  {
+   "role": "Purchase User"
+  },
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Manufacturing User"
+  },
+  {
+   "role": "Item Manager"
+  }
+ ]
+}
