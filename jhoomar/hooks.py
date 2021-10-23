@@ -143,3 +143,14 @@ app_license = "GPL 3.0"
 #
 # auto_cancel_exempted_doctypes = ["Auto Repeat"]
 
+
+doc_events = {
+    "BOM": {
+        "on_submit": "jhoomar.doc_events.bom.on_sumbit",
+        "on_cancel": "jhoomar.doc_events.bom.on_cancel",
+        "on_update_after_submit": "jhoomar.doc_events.bom.on_update_after_submit",
+    },
+    "Item": {
+        "after_insert": "jhoomar.doc_events.item.after_insert",
+    }
+}
