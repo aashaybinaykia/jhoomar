@@ -151,6 +151,7 @@ doc_events = {
         "on_update_after_submit": "jhoomar.doc_events.bom.on_update_after_submit",
     },
     "Item": {
+        "autoname": "jhoomar.doc_events.item.autoname",
         "after_insert": "jhoomar.doc_events.item.after_insert",
     }
 }

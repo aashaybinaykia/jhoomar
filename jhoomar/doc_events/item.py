@@ -5,6 +5,18 @@ import frappe
 from frappe import _
 
 @frappe.whitelist()
+def autoname(item, method):
+    if bool(item.variant_of):
+        autoname_item_code(item)
+
+def autoname_item_code(item):
+    from frappe.model.naming import make_autoname
+
+    prefix = item.variant_of + ".##"
+    name = make_autoname(prefix)
+    item.name = item.item_code = name
+
+@frappe.whitelist()
 def after_insert(item, method):
     if bool(item.variant_of):
         create_item_variant_bom_from_item_template(item)
