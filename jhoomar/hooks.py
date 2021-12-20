@@ -143,10 +143,6 @@ app_license = "GPL 3.0"
 #
 # auto_cancel_exempted_doctypes = ["Auto Repeat"]
 
-override_whitelisted_methods = {
-	"erpnext.accounts.doctype.purchase_invoice.purchase_invoice.make_debit_note": "jhoomar.doc_events.purchase_invoice.make_debit_note",
-	"erpnext.stock.doctype.purchase_receipt.purchase_receipt.make_purchase_return": "jhoomar.doc_events.purchase_receipt.make_purchase_return",
-}
 
 doc_events = {
     "BOM": {

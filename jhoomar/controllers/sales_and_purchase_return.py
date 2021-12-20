@@ -189,6 +189,6 @@ def make_return_doc(doctype, source_name, target_doc=None):
 	}, target_doc, set_missing_values)
 
 	if not len(doclist.items):
-		frappe.throw(_("Items does not have enough qty to return"), NegativeStockError, title='Insufficient Stock')
+		frappe.throw(_("Not Enough To Return"), NegativeStockError, title='Insufficient Stock')
 
 	return doclist
