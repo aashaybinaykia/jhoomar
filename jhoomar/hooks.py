@@ -156,5 +156,8 @@ doc_events = {
     "Item": {
         "autoname": "jhoomar.doc_events.item.autoname",
         "after_insert": "jhoomar.doc_events.item.after_insert",
+    },
+    "Purchase Invoice": {
+        "autoname": "jhoomar.doc_events.purchase_invoice.autoname"
     }
 }
