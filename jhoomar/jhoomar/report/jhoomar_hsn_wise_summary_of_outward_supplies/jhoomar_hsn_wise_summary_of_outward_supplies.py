@@ -27,7 +27,7 @@ def _execute(filters=None):
 	data = []
 	added_item = []
 	for d in item_list:
-		if (d.parent, d.item_code) not in added_item:
+		if (d.parent, d.item_code, d.name) not in added_item:
 			row = [d.gst_hsn_code, d.description, d.stock_uom, d.stock_qty]
 			total_tax = 0
 			for tax in tax_columns:
@@ -42,7 +42,7 @@ def _execute(filters=None):
 				row += [item_tax.get("tax_amount", 0)]
 
 			data.append(row)
-			added_item.append((d.parent, d.item_code))
+			added_item.append((d.parent, d.item_code, d.name))
 	if data:
 		data = get_merged_data(columns, data) # merge same hsn code data
 	return columns, data
