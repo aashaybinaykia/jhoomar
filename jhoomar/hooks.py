@@ -145,6 +145,9 @@ app_license = "GPL 3.0"
 
 
 doc_events = {
+    "Sales Invoice": {
+        "autoname": "jhoomar.doc_events.sales_invoice.autoname",
+    },
     "BOM": {
         "on_submit": "jhoomar.doc_events.bom.on_sumbit",
         "on_cancel": "jhoomar.doc_events.bom.on_cancel",
